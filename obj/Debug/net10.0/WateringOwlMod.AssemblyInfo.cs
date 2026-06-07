@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WateringOwlMod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e48ce873286abcbbb2d21495c4b3bc18bb586fe8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9e80f2f475310e2641d3327efdea6f3d0806ed6")]
 [assembly: System.Reflection.AssemblyProductAttribute("WateringOwlMod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WateringOwlMod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

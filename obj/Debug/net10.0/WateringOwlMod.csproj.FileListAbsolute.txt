@@ -22,3 +22,12 @@ C:\Users\SiluH\Documents\Python_projects\projekte mit blem\WateringOwlMod\obj\De
 C:\Users\SiluH\Documents\Python_projects\projekte mit blem\WateringOwlMod\bin\Debug\net10.0\UnityEngine.TextRenderingModule.dll
 C:\Users\SiluH\Documents\Python_projects\projekte mit blem\WateringOwlMod\bin\Debug\net10.0\UnityEngine.UI.dll
 C:\Users\SiluH\Documents\Python_projects\projekte mit blem\WateringOwlMod\bin\Debug\net10.0\UnityEngine.UIModule.dll
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.csproj.AssemblyReference.cache
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.AssemblyInfoInputs.cache
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.AssemblyInfo.cs
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.csproj.CoreCompileInputs.cache
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.sourcelink.json
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.dll
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\refint\WateringOwlMod.dll
+C:\Users\tvbas\Downloads\A&TMod\obj\Debug\net10.0\WateringOwlMod.pdb
