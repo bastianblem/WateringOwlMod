@@ -8,11 +8,6 @@
 //   3. Owl wakes up (NestSitting), checks for a dishwasher that needs water.
 //   4. If a bucket in inventory has charge == 0  → MoveTo Well → fill bucket.
 //   5. MoveTo Dishwasher → charge its SupplySource (water) → back to nest.
-//
-// Build requirements:
-//   - BepInEx 5.x
-//   - HarmonyX / BepInEx.HarmonyX
-//   - Unity.Netcode, Assembly-CSharp references from the game
 
 using BepInEx;
 using BepInEx.Logging;
@@ -32,9 +27,9 @@ using static SavedDevice;
 
 namespace blubdev.WateringOwl
 {
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  Constants & shared helpers
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public static class Utils
     {
         public static readonly ushort CLEANER_HOUSE_ID = 1156;
@@ -105,9 +100,9 @@ namespace blubdev.WateringOwl
             => (SupplySource)_adwWaterField?.GetValue(adw);
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  Task definition
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public class HelperTaskWater : HelperTaskBase
     {
         public enum Step { FillBucket, DeliverWater }
@@ -125,9 +120,9 @@ namespace blubdev.WateringOwl
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  State: NestSitting
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public class OwlNestSittingState : StateBase<HelperCleanerStateMachine>
     {
         private bool _invokeJumpOnEnter;
@@ -190,9 +185,9 @@ namespace blubdev.WateringOwl
         private HelperTaskWater BuildTask() => OwlTaskBuilder.Build(Owner);
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  State: Idle
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public class OwlIdleState : StateBase<HelperCleanerStateMachine>
     {
         private HelperTaskWater _externalTask;
@@ -216,9 +211,9 @@ namespace blubdev.WateringOwl
         public override void ExecutePerSecond() { }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  State: MoveTo
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public class OwlMoveToState : StateBase<HelperCleanerStateMachine>
     {
         private HelperTaskWater _task;
@@ -282,9 +277,9 @@ namespace blubdev.WateringOwl
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  State: DoTask
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public class OwlDoTaskState : StateBase<HelperCleanerStateMachine>
     {
         private HelperTaskWater _task;
@@ -374,9 +369,9 @@ namespace blubdev.WateringOwl
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  State: MoveToDefaultPos
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     public class OwlMoveToDefaultPosState : StateBase<HelperCleanerStateMachine>
     {
         private HelperCleaner Owner => stateMachine.Owner;
@@ -402,9 +397,9 @@ namespace blubdev.WateringOwl
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  Shared task builder (avoids duplicate logic across states)
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     internal static class OwlTaskBuilder
     {
         public static HelperTaskWater Build(HelperCleaner owner)
@@ -428,7 +423,7 @@ namespace blubdev.WateringOwl
                 }
             }
 
-            // Priority 2: full bucket + thirsty dishwasher → deliver
+            // Priority 2: semifull/full bucket + thirsty dishwasher → deliver
             Item fullBucket = Utils.FindFullBucket(inv);
             if (fullBucket.id != 0)
             {
@@ -449,9 +444,9 @@ namespace blubdev.WateringOwl
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  All state types that belong to this owl (used by Harmony patches)
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     internal static class OwlStateTypes
     {
         public static readonly List<Type> All = new List<Type>
@@ -770,9 +765,9 @@ namespace blubdev.WateringOwl
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     //  Plugin entry point
-    // ─────────────────────────────────────────────────────────────────────────
+    //
     [BepInPlugin("blubdev.WateringOwl", "Watering Owl", "1.0.0")]
     public class Plugin : BaseUnityPlugin
     {
